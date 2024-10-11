@@ -1,10 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-// import BankCard from "./BankCard";
 import { countTransactionCategories } from "@/lib/utils";
 import BankCard from "./BankCard";
-// import Category from "./Category";
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
   const categories: CategoryCount[] = countTransactionCategories(transactions);
@@ -16,13 +14,14 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
         <div className="profile">
           <div className="profile-img">
             <span className="text-5xl font-bold text-blue-500">
-              {user.firstName[0]}
+              {user?.name[0]}
             </span>
           </div>
 
           <div className="profile-details">
             <h1 className="profile-name">
-              {user.firstName} {user.lastName}
+              {/* {user.firstName} {user.lastName} */}
+              {user.name}
             </h1>
             <p className="profile-email">{user.email}</p>
           </div>
